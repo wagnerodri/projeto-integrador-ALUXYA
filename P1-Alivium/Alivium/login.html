@@ -32,6 +32,11 @@
       <p>Deslize para escolher seu perfil. Você pode entrar ou criar uma conta.</p>
     </section>
 
+    <aside class="auth-notice" aria-label="Aviso sobre a demonstração">
+      <i class="fas fa-circle-info" aria-hidden="true"></i>
+      <p>Esta página é uma demonstração escolar: os formulários validam os dados no navegador, mas não criam contas, não enviam informações e não armazenam senhas. Para autenticação real, é necessário um backend seguro.</p>
+    </aside>
+
     <div class="perfil-tabs" role="tablist" aria-label="Tipo de acesso">
       <button class="perfil-tab ativo" id="tab-usuario" type="button" role="tab" aria-selected="true" aria-controls="painel-usuario" data-auth-target="painel-usuario">
         <i class="fas fa-user" aria-hidden="true"></i> Sou usuário
@@ -65,7 +70,7 @@
             <p class="auth-status" role="status" aria-live="polite"></p>
           </form>
 
-          <form class="auth-form" id="usuario-cadastro" data-demo-form hidden>
+          <form class="auth-form" id="usuario-cadastro" data-demo-form data-registration-form hidden>
             <label for="usuario-nome">Nome completo</label>
             <input class="form-control" id="usuario-nome" name="nome" type="text" autocomplete="name" required>
             <label for="usuario-endereco">Endereço</label>
@@ -107,7 +112,7 @@
             <p class="auth-status" role="status" aria-live="polite"></p>
           </form>
 
-          <form class="auth-form" id="profissional-cadastro" data-demo-form hidden>
+          <form class="auth-form" id="profissional-cadastro" data-demo-form data-registration-form hidden>
             <label for="profissional-nome">Nome completo</label>
             <input class="form-control" id="profissional-nome" name="nome" type="text" autocomplete="name" required>
             <label for="profissional-endereco">Endereço</label>
@@ -145,6 +150,8 @@
     </div>
     <p class="footer-bottom">Desenvolvido pela equipe DSM-FATEC &copy; <span data-current-year>2026</span></p>
   </footer>
+  <a class="float-cta" href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp com a Alivium"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+  <button class="scroll-top" id="scroll-top" type="button" aria-label="Voltar ao topo"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="site.js"></script>
 </body>

@@ -8,20 +8,35 @@
 </head>
 <body>
   <!-- Cabeçalho e navegação da equipe de profissionais -->
-  <header class="topo"><a class="logo-topo" href="Home.html" aria-label="Alivium, início"><img src="img/logoOriginal.png" alt="Logo Alivium"></a><input class="menu-checkbox" type="checkbox" id="menu-profissionais"><label class="menu-button" for="menu-profissionais" aria-label="Abrir menu"><i class="fas fa-bars" aria-hidden="true"></i></label><nav id="nav-principal" aria-label="Navegação principal"><a href="Home.html">Início</a><a href="somos.html">Quem somos</a><a class="ativo" href="profissionais.html">Profissionais</a><a href="contatos.html">Contato</a></nav></header>
+  <header class="topo navbar navbar-expand-lg">
+    <a class="logo-topo navbar-brand" href="Home.html" aria-label="Alivium, início"><img src="img/logoOriginal.png" alt="Logo Alivium"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-principal" aria-controls="nav-principal" aria-expanded="false" aria-label="Abrir ou fechar menu"><span class="navbar-toggler-icon"></span></button>
+    <nav class="collapse navbar-collapse" id="nav-principal" aria-label="Navegação principal">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="Home.html">Início</a>
+        <a class="nav-link" href="somos.html">Quem somos</a>
+        <a class="nav-link ativo" aria-current="page" href="profissionais.html">Profissionais</a>
+        <a class="nav-link" href="contatos.html">Contato</a>
+        <!-- Acesso e cadastro ficam no fim da navegação, após Contato. -->
+        <a class="nav-link" href="login.html">Entrar</a>
+      </div>
+    </nav>
+  </header>
   <main>
     <!-- Introdução da página de profissionais -->
     <section class="pagina-cabecalho profissionais-intro"><p class="eyebrow">Nossa equipe</p><h1>Profissionais para acompanhar o seu momento.</h1><p>Encontre especialistas com diferentes experiências para cuidar da ansiedade, do estresse e do burnout com escuta e responsabilidade.</p></section>
     <!-- Cards com especialidades e formas de contato -->
-    <section class="secao profissionais-secao" aria-labelledby="titulo-profissionais"><div class="secao-cabecalho"><h2 id="titulo-profissionais">Conheça alguns especialistas</h2><p>Os perfis abaixo são ilustrativos e servem para apresentar a experiência da plataforma.</p></div><div class="profissionais-grid row g-4">
-      <article class="profissional-card col-12 col-md-6 col-lg-4"><img src="img/dra.avif" alt="Dra. Marina Alves, psicóloga clínica"><div class="profissional-info"><p class="profissao">Psicóloga clínica</p><h3>Dra. Marina Alves</h3><p>Atendimento para ansiedade, autoestima e desenvolvimento pessoal.</p><a class="link-card" href="mailto:marina@alivium.com.br">Entrar em contato <span aria-hidden="true">&rarr;</span></a></div></article>
-      <article class="profissional-card col-12 col-md-6 col-lg-4"><img src="img/doutor.1.webp" alt="Dr. Rafael Mendes, psicólogo"><div class="profissional-info"><p class="profissao">Psicólogo e terapeuta</p><h3>Dr. Rafael Mendes</h3><p>Foco em estresse profissional, burnout e equilíbrio no trabalho.</p><a class="link-card" href="mailto:rafael@alivium.com.br">Entrar em contato <span aria-hidden="true">&rarr;</span></a></div></article>
-      <article class="profissional-card col-12 col-md-6 col-lg-4"><img src="img/dra.3.jpg" alt="Dra. Beatriz Costa, psicóloga para adultos"><div class="profissional-info"><p class="profissao">Psicóloga para adultos</p><h3>Dra. Beatriz Costa</h3><p>Acompanhamento de relacionamentos, luto e mudanças de vida.</p><a class="link-card" href="mailto:beatriz@alivium.com.br">Entrar em contato <span aria-hidden="true">&rarr;</span></a></div></article>
-      <article class="profissional-card col-12 col-md-6 col-lg-4"><img src="img/dr.2.webp" alt="Dr. Lucas Ferreira, psicólogo corporativo"><div class="profissional-info"><p class="profissao">Psicólogo corporativo</p><h3>Dr. Lucas Ferreira</h3><p>Programas de saúde mental e prevenção para equipes e empresas.</p><a class="link-card" href="mailto:lucas@alivium.com.br">Entrar em contato <span aria-hidden="true">&rarr;</span></a></div></article>
+    <section class="secao profissionais-secao" aria-labelledby="titulo-profissionais"><div class="secao-cabecalho"><h2 id="titulo-profissionais">Conheça alguns especialistas</h2><p>Os perfis abaixo são ilustrativos e servem para apresentar a experiência da plataforma.</p></div><div class="profissionais-grid">
+      <article class="profissional-card"><img src="img/dra.avif" alt="Dra. Marina Alves, psicóloga clínica"><div class="profissional-info"><p class="profissao">Psicóloga clínica</p><h3>Dra. Marina Alves</h3><p>Atendimento para ansiedade, autoestima e desenvolvimento pessoal.</p><a class="link-card" href="mailto:marina@alivium.com.br">Entrar em contato <span aria-hidden="true">&rarr;</span></a></div></article>
+      <article class="profissional-card"><img src="img/doutor.1.webp" alt="Dr. Rafael Mendes, psicólogo"><div class="profissional-info"><p class="profissao">Psicólogo e terapeuta</p><h3>Dr. Rafael Mendes</h3><p>Foco em estresse profissional, burnout e equilíbrio no trabalho.</p><a class="link-card" href="mailto:rafael@alivium.com.br">Entrar em contato <span aria-hidden="true">&rarr;</span></a></div></article>
+      <article class="profissional-card"><img src="img/dra.3.jpg" alt="Dra. Beatriz Costa, psicóloga para adultos"><div class="profissional-info"><p class="profissao">Psicóloga para adultos</p><h3>Dra. Beatriz Costa</h3><p>Acompanhamento de relacionamentos, luto e mudanças de vida.</p><a class="link-card" href="mailto:beatriz@alivium.com.br">Entrar em contato <span aria-hidden="true">&rarr;</span></a></div></article>
+      <article class="profissional-card"><img src="img/dr.2.webp" alt="Dr. Lucas Ferreira, psicólogo corporativo"><div class="profissional-info"><p class="profissao">Psicólogo corporativo</p><h3>Dr. Lucas Ferreira</h3><p>Programas de saúde mental e prevenção para equipes e empresas.</p><a class="link-card" href="mailto:lucas@alivium.com.br">Entrar em contato <span aria-hidden="true">&rarr;</span></a></div></article>
     </div></section>
   </main>
   <!-- Rodapé com os canais da Alivium -->
-  <footer class="footer"><div class="footer-container"><div><img src="img/logoOriginal.png" alt="Logo Alivium"></div><div><h2>Alivium</h2><p>Saúde mental com acolhimento e propósito.</p></div><div><h2>Contato</h2><a href="contatos.html">Fale com nossa equipe</a><a href="mailto:contato@alivium.com.br">contato@alivium.com.br</a></div></div><p class="footer-bottom">Desenvolvido pela equipe DSM-FATEC &copy; 2026</p></footer>
+  <footer class="footer"><div class="footer-container"><div><img src="img/logoOriginal.png" alt="Logo Alivium"></div><div><h2>Alivium</h2><p>Saúde mental com acolhimento e propósito.</p></div><div><h2>Contato</h2><a href="contatos.html">Fale com nossa equipe</a><a href="mailto:contato@alivium.com.br">contato@alivium.com.br</a></div></div><p class="footer-bottom">Desenvolvido pela equipe DSM-FATEC &copy; <span data-current-year>2026</span></p></footer>
+  <a class="float-cta" href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp com a Alivium"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+  <button class="scroll-top" id="scroll-top" type="button" aria-label="Voltar ao topo"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="site.js"></script>
 </body>

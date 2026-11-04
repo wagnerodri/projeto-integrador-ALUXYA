@@ -4,6 +4,20 @@ document.querySelectorAll("[data-current-year]").forEach((element) => {
   element.textContent = String(new Date().getFullYear());
 });
 
+const scrollTopButton = document.querySelector("#scroll-top");
+
+if (scrollTopButton instanceof HTMLButtonElement) {
+  const toggleScrollTopButton = () => {
+    scrollTopButton.classList.toggle("is-visible", window.scrollY > 320);
+  };
+
+  toggleScrollTopButton();
+  window.addEventListener("scroll", toggleScrollTopButton, { passive: true });
+  scrollTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
 const contactForm = document.querySelector("#form-contato");
 
 if (contactForm instanceof HTMLFormElement) {
@@ -87,6 +101,18 @@ document.querySelectorAll(".auth-form").forEach((form) => {
     return;
   }
 
+  const status = form.querySelector(".auth-status");
+
+  const showStatus = (message, type) => {
+    if (status instanceof HTMLElement) {
+      status.textContent = message;
+      status.classList.toggle("is-success", type === "success");
+      status.classList.toggle("is-error", type === "error");
+    }
+  };
+
+  const clearStatus = () => showStatus("", "");
+
   const validatePasswordConfirmation = () => {
     const password = form.querySelector('input[name="senha"]');
     const confirmation = form.querySelector('input[name="confirmacao"]');
@@ -98,24 +124,69 @@ document.querySelectorAll(".auth-form").forEach((form) => {
   };
 
   form.querySelectorAll('input[name="senha"], input[name="confirmacao"]').forEach((input) => {
-    input.addEventListener("input", validatePasswordConfirmation);
+    input.addEventListener("input", () => {
+      validatePasswordConfirmation();
+      clearStatus();
+    });
   });
 
   const proofInput = form.querySelector("#profissional-comprovante");
   if (proofInput instanceof HTMLInputElement) {
     proofInput.addEventListener("change", () => {
       const file = proofInput.files?.[0];
-      proofInput.setCustomValidity(
-        file && file.size > 5 * 1024 * 1024 ? "O comprovante deve ter no máximo 5 MB." : "",
-      );
+      const allowedExtensions = [".pdf", ".jpg", ".jpeg", ".png"];
+      const allowedMimeTypes = ["application/pdf", "image/jpeg", "image/png"];
+      const fileName = file?.name.toLowerCase() ?? "";
+      const hasAllowedExtension = allowedExtensions.some((extension) => fileName.endsWith(extension));
+      const hasAllowedType = !file?.type || allowedMimeTypes.includes(file.type);
+
+      let error = "";
+      if (file && file.size > 5 * 1024 * 1024) {
+        error = "O comprovante deve ter no máximo 5 MB.";
+      } else if (file && (!hasAllowedExtension || !hasAllowedType)) {
+        error = "Envie o comprovante em PDF, JPG ou PNG.";
+      }
+
+      proofInput.setCustomValidity(error);
+      clearStatus();
     });
   }
 
+  form.addEventListener("invalid", (event) => {
+    const invalidField = event.target;
+    let message = "Confira os campos destacados e tente novamente.";
+
+    if (invalidField instanceof HTMLInputElement || invalidField instanceof HTMLTextAreaElement) {
+      if (invalidField.validity.valueMissing) {
+        message = "Preencha todos os campos obrigatórios.";
+      } else if (invalidField.validity.typeMismatch) {
+        message = "Informe um e-mail válido.";
+      } else if (invalidField.validity.tooShort) {
+        message = "A senha deve ter pelo menos 8 caracteres.";
+      } else if (invalidField.validity.customError) {
+        message = invalidField.validationMessage;
+      }
+    }
+
+    showStatus(message, "error");
+  }, true);
+
+  form.addEventListener("input", clearStatus);
+  form.addEventListener("change", clearStatus);
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const status = form.querySelector(".auth-status");
-    if (status instanceof HTMLElement) {
-      status.textContent = "Demonstração: nenhum dado foi enviado ou salvo. A autenticação estará disponível quando o site tiver um backend seguro.";
+
+    if (form.hasAttribute("data-registration-form")) {
+      showStatus(
+        "Cadastro validado com sucesso! Esta é uma demonstração: sua conta não foi criada nem seus dados foram salvos ou enviados.",
+        "success",
+      );
+    } else {
+      showStatus(
+        "Demonstração: a autenticação não está ativa. Nenhum dado foi enviado ou salvo.",
+        "",
+      );
     }
   });
 });

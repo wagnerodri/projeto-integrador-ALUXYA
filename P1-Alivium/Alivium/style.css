@@ -393,7 +393,7 @@ p {
 .integrante-avatar {
     display: grid;
     width: 58px;
-    aspect-ratio: 1;
+    height: 58px;
     place-items: center;
     margin-bottom: 18px;
     color: var(--branco);
@@ -405,6 +405,7 @@ p {
 
 img.integrante-avatar {
     object-fit: cover;
+    border-radius: 50%;
 }
 
 .integrante-funcao {

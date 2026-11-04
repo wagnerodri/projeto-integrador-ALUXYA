@@ -2,7 +2,41 @@
 
 ## Sobre o projeto
 
-O Alivium é um projeto desenvolvido como parte do Projeto Integrador, com o objetivo de facilitar a conexão entre clientes e prestadores de serviços. A proposta é permitir que os usuários conheçam os perfis, as qualificações e os portfólios dos prestadores antes de contratar um serviço.
+O Alivium é um projeto integrador que apresenta uma plataforma demonstrativa de acolhimento psicológico. O site informa sobre a proposta, apresenta profissionais, oferece canais de contato e demonstra telas de acesso e cadastro para usuários e profissionais.
+
+Os formulários de acesso são apenas demonstrativos: não criam contas, não autenticam usuários e não enviam nem armazenam dados. Uma implementação real exige um backend seguro.
+
+## Tecnologias
+
+- HTML5 semântico
+- CSS3
+- Bootstrap 5.3.3 para componentes e responsividade
+- JavaScript para validação e interações da interface
+- Font Awesome para ícones
+
+Bootstrap e Font Awesome são carregados por CDN, então é necessária conexão com a internet para carregar esses recursos.
+
+## Estrutura do projeto
+
+```text
+P1-Alivium/
+└── Alivium/
+    ├── Home.html
+    ├── somos.html
+    ├── profissionais.html
+    ├── contatos.html
+    ├── login.html
+    ├── style.css
+    ├── site.js
+    ├── img/
+    └── figma-editavel/
+```
+
+O detalhamento das páginas e interações está em [P1-Alivium/Alivium/README.md](./P1-Alivium/Alivium/README.md).
+
+## Como executar
+
+Abra `P1-Alivium/Alivium/Home.html` em um navegador. Alternativamente, abra o repositório no Visual Studio Code e execute a página com a extensão Live Server.
 
 ## Objetivo do repositório
 

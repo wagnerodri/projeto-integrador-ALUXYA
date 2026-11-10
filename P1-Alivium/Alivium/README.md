@@ -1,4 +1,4 @@
-# Alivium
+# ALUXYA
 
 Projeto integrador de uma plataforma demonstrativa de acolhimento psicológico, com informações sobre a proposta, profissionais, canais de contato e acesso para usuários e profissionais.
 

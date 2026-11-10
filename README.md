@@ -1,8 +1,8 @@
-# Projeto Integrador Alivium
+# Projeto Integrador ALUXYA
 
 ## Sobre o projeto
 
-O Alivium é um projeto integrador que apresenta uma plataforma demonstrativa de acolhimento psicológico. O site informa sobre a proposta, apresenta profissionais, oferece canais de contato e demonstra telas de acesso e cadastro para usuários e profissionais.
+A ALUXYA é um projeto integrador que apresenta uma plataforma demonstrativa de acolhimento psicológico. O site informa sobre a proposta, apresenta profissionais, oferece canais de contato e demonstra telas de acesso e cadastro para usuários e profissionais.
 
 Os formulários de acesso são apenas demonstrativos: não criam contas, não autenticam usuários e não enviam nem armazenam dados. Uma implementação real exige um backend seguro.
 

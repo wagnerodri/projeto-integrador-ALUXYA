@@ -31,7 +31,7 @@ if (contactForm instanceof HTMLFormElement) {
     const subject = encodeURIComponent(`Mensagem pelo site - ${name}`);
     const body = encodeURIComponent(`Nome: ${name}\nE-mail: ${email}\n\nMensagem:\n${message}`);
 
-    window.location.href = `mailto:contato@alivium.com.br?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:contato@aluxya.com.br?subject=${subject}&body=${body}`;
   });
 }
 
